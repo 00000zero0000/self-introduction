@@ -1,0 +1,62 @@
+.座右銘{
+    display:flex;
+    justify-content:center; /* 水平對齊(置中) */
+    align-items: center; /* 上下置中 */
+    font-weight: bold;
+    font-size: 2.3rem; /* 字體大小 */
+    height: 200px;
+    position: relative;
+    text-align: center; /*文本水平居中*/
+    white-space: pre-line; /*允許換行*/
+    }
+
+    /* === removing default button style ===*/
+.button {
+    position: absolute;
+    bottom:0;
+    left: auto;
+    right:0;
+    margin: 0;
+    margin-left: 70%;
+    margin-top: 10%;
+    height: auto;
+    background: transparent; /*背景透明*/
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* button styling */
+.button {
+    height: auto;
+  --border-right: 6px; /*右邊直槓粗細*/
+  --text-stroke-color: rgb(255, 255, 255); /*字的顏色*/
+  --animation-color: #ffcdf6; /*鼠標上去後字的艷色*/
+  --fs-size: 2em; /*白色字體大小*/
+  letter-spacing: 3px; /*白色字間距*/
+  text-decoration: none;
+  font-size: var(--fs-size); /*白粉色字體大小*/
+  font-family: "Arial";
+  position: relative; /*粉色直槓加字的區域*/
+  text-transform: uppercase; /*白粉字大寫*/
+  color: transparent; /*白色字體裡面的顏色*/
+  -webkit-text-stroke: 1px var(--text-stroke-color); /*白色字的邊寬*/
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%; /*讓鼠標上去可以有左右動畫*/
+  inset: 0; /*堆疊在原本的字上*/
+  border-right: var(--border-right) solid var(--animation-color); /*直槓*/
+  overflow: hidden; /*白色字*/
+  transition: 0.4s; /*鼠標上去後的秒數*/
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%; /*鼠標示去後的背景*/
+  filter: drop-shadow(0 0 23px var(--animation-color)) /*鼠標上去後的影子*/
+}

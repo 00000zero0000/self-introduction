@@ -1,0 +1,101 @@
+.inline { /* 按鈕位置 */
+    white-space: nowrap;
+    display: flex;
+    margin-left: 60%;
+    margin-top: 10px;
+}
+.button-86 { /* 方格按鈕 */
+    all: unset;
+    width: 80px;
+    height: 20px;
+    margin: 20px;
+    font-size: 17px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-family: 標楷體, sans-serif; /* 更改字體 */
+}
+
+.button-86::after,
+.button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .3s;
+}
+
+.button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #7f4d0176; 
+    border-radius: 10px;
+}
+
+.button-86::after { /* 右下圓圓 */
+    transform: translate(10px, 10px);
+    width: 25px;
+    height: 25px;
+    background: #ffe0b156; 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+.button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+
+.button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}
+
+.contents {
+    color: #ffffff;
+    display: flex;
+    justify-content: center; /* 水平對齊(置中) */
+    align-items: center; /* 上下置中 */
+    font-size: 20px; /* 字體大小 */
+    line-height: 2; /* 行高 */
+    height: calc(100vh - 60px); /* 調整高度 */
+    position: absolute; /* 絕對定位 */
+    text-align: left; /* 文本水平居中 */
+    white-space: pre-line; /* 允許換行 */
+    font-family: 標楷體, sans-serif; /* 更改字體 */
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    overflow: auto; /* 增加溢出滾動 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.contents::-webkit-scrollbar {
+    display: none; /* Safari 和 Chrome */
+}
+.hidden {
+    display: none;
+}
